@@ -1,13 +1,10 @@
 <?php
 
 /**
- * Fired during plugin activation
+ * Fired during plugin activation.
  *
  * @link       http://example.com
  * @since      1.0.0
- *
- * @package    Social_link
- * @subpackage Social_link/includes
  */
 
 /**
@@ -16,21 +13,19 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    Social_link
- * @subpackage Social_link/includes
+ *
  * @author     Your Name <email@example.com>
  */
-class Social_link_Activator {
-
-	/**
-	 * Short Description. (use period)
-	 *
-	 * Long Description.
-	 *
-	 * @since    1.0.0
-	 */
-	public static function activate() {
-
-	}
-
+class Social_link_Activator
+{
+    /**
+     * Short Description. (use period).
+     *
+     * Long Description.
+     *
+     * @since    1.0.0
+     */
+    public static function activate()
+    {
+    }
 }
