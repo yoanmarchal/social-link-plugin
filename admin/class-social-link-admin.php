@@ -13,7 +13,7 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @author     Your Name <email@example.com>
+ * @author     Your Name <marchalyoan@gmail.com>
  */
 class Social_link_Admin
 {
@@ -24,7 +24,7 @@ class Social_link_Admin
          *
          * @var string The ID of this plugin.
          */
-        private $plugin_name;
+        private $social_link;
 
         /**
          * The version of this plugin.
@@ -40,7 +40,7 @@ class Social_link_Admin
           *
           * @since    1.0.0
           *
-          * @param      string    $plugin_name       The name of this plugin.
+          * @param      string    $social_link       The name of this plugin.
           * @param      string    $version    The version of this plugin.
           */
 
@@ -49,9 +49,9 @@ class Social_link_Admin
           */
          private $options;
 
-    public function __construct($plugin_name, $version)
+    public function __construct($social_link, $version)
     {
-        $this->plugin_name = $plugin_name;
+        $this->social_link = $social_link;
         $this->version = $version;
         add_action('admin_menu', [$this, 'add_plugin_page']);
         add_action('admin_init', [$this, 'page_init']);
@@ -77,7 +77,7 @@ class Social_link_Admin
              * class.
              */
 
-            wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__).'css/social-link-admin.css', [], $this->version, 'all');
+            wp_enqueue_style($this->social_link, plugin_dir_url(__FILE__).'css/social-link-admin.css', [], $this->version, 'all');
         }
 
         /**
@@ -100,7 +100,7 @@ class Social_link_Admin
              * class.
              */
 
-            wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__).'js/social-link-admin.js', ['jquery'], $this->version, false);
+            wp_enqueue_script($this->social_link, plugin_dir_url(__FILE__).'js/social-link-admin.js', ['jquery'], $this->version, false);
         }
 
     /**

@@ -14,7 +14,7 @@
  *
  * @since      1.0.0
  *
- * @author     Your Name <email@example.com>
+ * @author     Your Name <marchalyoan@gmail.com>
  */
 class Social_link_Deactivator
 {

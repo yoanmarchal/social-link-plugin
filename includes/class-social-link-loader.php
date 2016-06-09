@@ -14,7 +14,7 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @author     Your Name <email@example.com>
+ * @author     Your Name <marchalyoan@gmail.com>
  */
 class Social_link_Loader
 {

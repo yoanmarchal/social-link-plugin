@@ -29,6 +29,8 @@ Echo value
 
 
 == Changelog ==
+= 1.1 =
+clean plugin.
 
 = 1.0 =
 Initial plugin.

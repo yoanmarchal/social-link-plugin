@@ -33,7 +33,7 @@ if (!defined('WPINC')) {
  * The code that runs during plugin activation.
  * This action is documented in includes/class-social-link-activator.php.
  */
-function activate_plugin_name()
+function activate_social_link()
 {
     require_once plugin_dir_path(__FILE__).'includes/class-social-link-activator.php';
     Social_link_Activator::activate();
@@ -43,14 +43,14 @@ function activate_plugin_name()
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-social-link-deactivator.php.
  */
-function deactivate_plugin_name()
+function deactivate_social_link()
 {
     require_once plugin_dir_path(__FILE__).'includes/class-social-link-deactivator.php';
     Social_link_Deactivator::deactivate();
 }
 
-register_activation_hook(__FILE__, 'activate_plugin_name');
-register_deactivation_hook(__FILE__, 'deactivate_plugin_name');
+register_activation_hook(__FILE__, 'activate_social_link');
+register_deactivation_hook(__FILE__, 'deactivate_social_link');
 
 /**
  * The core plugin class that is used to define internationalization,
