@@ -1,0 +1,14 @@
+{
+    "name": "yoanmarchal/social-link-plugin",
+    "description": "Add capability to store social links of a website",
+    "type": "wordpress-plugin",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "Yoan marchal",
+            "email": "marchalyoan@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
