@@ -10,7 +10,8 @@ Social link
  - License: GPLv2 or later
  - License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9CYUE3CVEAJ2Q)
+![https://styleci.io/repos/60421498/shield](https://styleci.io/repos/60421498/shield)
+[![Code Climate](https://codeclimate.com/github/yoanmarchal/social-link-plugin/badges/gpa.svg)](https://codeclimate.com/github/yoanmarchal/social-link-plugin) [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9CYUE3CVEAJ2Q)
 
 Simple save global and retrive social links of website
 
