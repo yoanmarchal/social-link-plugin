@@ -124,8 +124,7 @@ class Social_link_Admin
     public function create_admin_page()
     {
         // Set class property
-            $this->options = get_option('links');
-        ?>
+            $this->options = get_option('links'); ?>
 			<div class="wrap">
 					<h2>My Settings</h2>
 					<form method="post" action="options.php">
@@ -133,8 +132,7 @@ class Social_link_Admin
                             // This prints out all hidden setting fields
                             settings_fields('my_option_group');
         do_settings_sections('social-link-admin');
-        submit_button();
-        ?>
+        submit_button(); ?>
 					</form>
 			</div>
 			<?php
