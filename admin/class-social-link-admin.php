@@ -77,7 +77,7 @@ class Social_link_Admin
              * class.
              */
 
-            wp_enqueue_style($this->social_link, plugin_dir_url(__FILE__).'css/social-link-admin.css', [], $this->version, 'all');
+            //wp_enqueue_style($this->social_link, plugin_dir_url(__FILE__).'css/social-link-admin.css', [], $this->version, 'all');
         }
 
         /**
@@ -100,7 +100,7 @@ class Social_link_Admin
              * class.
              */
 
-            wp_enqueue_script($this->social_link, plugin_dir_url(__FILE__).'js/social-link-admin.js', ['jquery'], $this->version, false);
+            //wp_enqueue_script($this->social_link, plugin_dir_url(__FILE__).'js/social-link-admin.js', ['jquery'], $this->version, false);
         }
 
     /**
