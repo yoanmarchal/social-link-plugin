@@ -18,36 +18,36 @@
 class Social_link_Admin
 {
     /**
-         * The ID of this plugin.
-         *
-         * @since    1.0.0
-         *
-         * @var string The ID of this plugin.
-         */
-        private $social_link;
+     * The ID of this plugin.
+     *
+     * @since    1.0.0
+     *
+     * @var string The ID of this plugin.
+     */
+    private $social_link;
 
-        /**
-         * The version of this plugin.
-         *
-         * @since    1.0.0
-         *
-         * @var string The current version of this plugin.
-         */
-        private $version;
+    /**
+     * The version of this plugin.
+     *
+     * @since    1.0.0
+     *
+     * @var string The current version of this plugin.
+     */
+    private $version;
 
-         /**
-          * Initialize the class and set its properties.
-          *
-          * @since    1.0.0
-          *
-          * @param      string    $social_link       The name of this plugin.
-          * @param      string    $version    The version of this plugin.
-          */
+    /**
+     * Initialize the class and set its properties.
+     *
+     * @since    1.0.0
+     *
+     * @param      string    $social_link       The name of this plugin.
+     * @param      string    $version    The version of this plugin.
+     */
 
-         /**
-          * Holds the values to be used in the fields callbacks.
-          */
-         private $options;
+    /**
+     * Holds the values to be used in the fields callbacks.
+     */
+    private $options;
 
     public function __construct($social_link, $version)
     {
@@ -57,13 +57,13 @@ class Social_link_Admin
         add_action('admin_init', [$this, 'page_init']);
     }
 
-        /**
-         * Register the stylesheets for the admin area.
-         *
-         * @since    1.0.0
-         */
-        public function enqueue_styles()
-        {
+    /**
+     * Register the stylesheets for the admin area.
+     *
+     * @since    1.0.0
+     */
+    public function enqueue_styles()
+    {
 
             /*
              * This function is provided for demonstration purposes only.
@@ -78,15 +78,15 @@ class Social_link_Admin
              */
 
             //wp_enqueue_style($this->social_link, plugin_dir_url(__FILE__).'css/social-link-admin.css', [], $this->version, 'all');
-        }
+    }
 
-        /**
-         * Register the JavaScript for the admin area.
-         *
-         * @since    1.0.0
-         */
-        public function enqueue_scripts()
-        {
+    /**
+     * Register the JavaScript for the admin area.
+     *
+     * @since    1.0.0
+     */
+    public function enqueue_scripts()
+    {
 
             /*
              * This function is provided for demonstration purposes only.
@@ -101,7 +101,7 @@ class Social_link_Admin
              */
 
             //wp_enqueue_script($this->social_link, plugin_dir_url(__FILE__).'js/social-link-admin.js', ['jquery'], $this->version, false);
-        }
+    }
 
     /**
      * Add options page.
@@ -109,7 +109,7 @@ class Social_link_Admin
     public function add_plugin_page()
     {
         // This page will be under "Settings"
-            add_options_page(
+        add_options_page(
                     'Settings Admin',
                     'Social Links',
                     'manage_options',
@@ -136,7 +136,6 @@ class Social_link_Admin
 					</form>
 			</div>
 			<?php
-
     }
 
     // Facebook, YouTube, Twitter, Instagram, Tumblr, Google+,  Skype, Reddit, Soundcloud, Pinterest
@@ -239,11 +238,9 @@ class Social_link_Admin
                     'setting_section_id' // Section
             );
 
-
-
-            /*
-            facebook twitter
-            */
+        /*
+        facebook twitter
+        */
     }
 
     /**
