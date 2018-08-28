@@ -40,8 +40,8 @@ class Social_link_Admin
      *
      * @since    1.0.0
      *
-     * @param      string    $social_link       The name of this plugin.
-     * @param      string    $version    The version of this plugin.
+     * @param string $social_link The name of this plugin.
+     * @param string $version     The version of this plugin.
      */
 
     /**
@@ -131,8 +131,8 @@ class Social_link_Admin
 					<?php
                         // This prints out all hidden setting fields
                         settings_fields('my_option_group');
-                        do_settings_sections('social-link-admin');
-                        submit_button(); ?>
+        do_settings_sections('social-link-admin');
+        submit_button(); ?>
 					</form>
 			</div>
 			<?php
@@ -165,7 +165,7 @@ class Social_link_Admin
                     'social-link-admin', // Page
                     'setting_section_id' // Section
             );
-        
+
         add_settings_field(
             'linkedin', // ID
             'Linked-in', // Title
