@@ -15,7 +15,7 @@
  * Plugin Name:       Social link Plugin
  * Plugin URI:        http://example.com/social-link-uri/
  * Description:       Simple plugin for save && retrive social links
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Yoan marchal
  * Author URI:        http://yoanmarchal.com/
  * License:           GPL-2.0+

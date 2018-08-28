@@ -129,10 +129,10 @@ class Social_link_Admin
 					<h2>My Settings</h2>
 					<form method="post" action="options.php">
 					<?php
-                            // This prints out all hidden setting fields
-                            settings_fields('my_option_group');
-        do_settings_sections('social-link-admin');
-        submit_button(); ?>
+                        // This prints out all hidden setting fields
+                        settings_fields('my_option_group');
+                        do_settings_sections('social-link-admin');
+                        submit_button(); ?>
 					</form>
 			</div>
 			<?php
@@ -165,6 +165,14 @@ class Social_link_Admin
                     'social-link-admin', // Page
                     'setting_section_id' // Section
             );
+        
+        add_settings_field(
+            'linkedin', // ID
+            'Linked-in', // Title
+            [$this, 'linkedin_callback'], // Callback
+            'social-link-admin', // Page
+            'setting_section_id' // Section
+        );
 
         add_settings_field(
                     'youtube', // ID
@@ -256,6 +264,10 @@ class Social_link_Admin
             $new_input['facebook'] = sanitize_text_field($input['facebook']);
         }
 
+        if (isset($input['linkedin'])) {
+            $new_input['linkedin'] = sanitize_text_field($input['linkedin']);
+        }
+
         if (isset($input['youtube'])) {
             $new_input['youtube'] = sanitize_text_field($input['youtube']);
         }
@@ -311,6 +323,17 @@ class Social_link_Admin
         printf(
                     '<input type="url" id="facebook" name="links[facebook]" value="%s" />',
                     isset($this->options['facebook']) ? esc_url($this->options['facebook']) : ''
+            );
+    }
+
+    /**
+     * Get the settings option array and print one of its values.
+     */
+    public function linkedin_callback()
+    {
+        printf(
+                    '<input type="url" id="linkedin" name="links[linkedin]" value="%s" />',
+                    isset($this->options['linkedin']) ? esc_url($this->options['linkedin']) : ''
             );
     }
 
