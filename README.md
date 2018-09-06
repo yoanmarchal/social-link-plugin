@@ -12,6 +12,7 @@ Social link
 
 ![https://styleci.io/repos/60421498/shield](https://styleci.io/repos/60421498/shield)
 [![Code Climate](https://codeclimate.com/github/yoanmarchal/social-link-plugin/badges/gpa.svg)](https://codeclimate.com/github/yoanmarchal/social-link-plugin) [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9CYUE3CVEAJ2Q)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fyoanmarchal%2Fsocial-link-plugin.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fyoanmarchal%2Fsocial-link-plugin?ref=badge_shield)
 
 Simple save global and retrive social links of website
 
@@ -43,3 +44,6 @@ Initial plugin.
 
 * Test
 * svg icons
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fyoanmarchal%2Fsocial-link-plugin.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fyoanmarchal%2Fsocial-link-plugin?ref=badge_large)
