@@ -65,7 +65,7 @@ class Social_link_Admin
     public function enqueue_styles()
     {
 
-            /*
+        /*
              * This function is provided for demonstration purposes only.
              *
              * An instance of this class should be passed to the run() function
@@ -77,7 +77,7 @@ class Social_link_Admin
              * class.
              */
 
-            //wp_enqueue_style($this->social_link, plugin_dir_url(__FILE__).'css/social-link-admin.css', [], $this->version, 'all');
+        //wp_enqueue_style($this->social_link, plugin_dir_url(__FILE__).'css/social-link-admin.css', [], $this->version, 'all');
     }
 
     /**
@@ -88,7 +88,7 @@ class Social_link_Admin
     public function enqueue_scripts()
     {
 
-            /*
+        /*
              * This function is provided for demonstration purposes only.
              *
              * An instance of this class should be passed to the run() function
@@ -100,7 +100,7 @@ class Social_link_Admin
              * class.
              */
 
-            //wp_enqueue_script($this->social_link, plugin_dir_url(__FILE__).'js/social-link-admin.js', ['jquery'], $this->version, false);
+        //wp_enqueue_script($this->social_link, plugin_dir_url(__FILE__).'js/social-link-admin.js', ['jquery'], $this->version, false);
     }
 
     /**
@@ -110,12 +110,12 @@ class Social_link_Admin
     {
         // This page will be under "Settings"
         add_options_page(
-                    'Settings Admin',
-                    'Social Links',
-                    'manage_options',
-                    'social-link-admin',
-                    [$this, 'create_admin_page']
-            );
+            'Settings Admin',
+            'Social Links',
+            'manage_options',
+            'social-link-admin',
+            [$this, 'create_admin_page']
+        );
     }
 
     /**
@@ -124,18 +124,18 @@ class Social_link_Admin
     public function create_admin_page()
     {
         // Set class property
-            $this->options = get_option('links'); ?>
-			<div class="wrap">
-					<h2>My Settings</h2>
-					<form method="post" action="options.php">
-					<?php
-                        // This prints out all hidden setting fields
-                        settings_fields('my_option_group');
-        do_settings_sections('social-link-admin');
-        submit_button(); ?>
-					</form>
-			</div>
-			<?php
+        $this->options = get_option('links'); ?>
+        <div class="wrap">
+            <h2><?= __('Social links') ?></h2>
+            <form method="post" action="options.php">
+                <?php
+                // This prints out all hidden setting fields
+                settings_fields('my_option_group');
+                do_settings_sections('social-link-admin');
+                submit_button(); ?>
+            </form>
+        </div>
+<?php
     }
 
     // Facebook, YouTube, Twitter, Instagram, Tumblr, Google+,  Skype, Reddit, Soundcloud, Pinterest
@@ -146,25 +146,25 @@ class Social_link_Admin
     public function page_init()
     {
         register_setting(
-                    'my_option_group', // Option group
-                    'links', // Option name
-                    [$this, 'sanitize'] // Sanitize
-            );
+            'my_option_group', // Option group
+            'links', // Option name
+            [$this, 'sanitize'] // Sanitize
+        );
 
         add_settings_section(
-                    'setting_section_id', // ID
-                    'Liens sociaux', // Title
-                    [$this, 'print_section_info'], // Callback
-                    'social-link-admin' // Page
-            );
+            'setting_section_id', // ID
+            'Liens sociaux', // Title
+            [$this, 'print_section_info'], // Callback
+            'social-link-admin' // Page
+        );
 
         add_settings_field(
-                    'facebook', // ID
-                    'Facebook', // Title
-                    [$this, 'facebook_callback'], // Callback
-                    'social-link-admin', // Page
-                    'setting_section_id' // Section
-            );
+            'facebook', // ID
+            'Facebook', // Title
+            [$this, 'facebook_callback'], // Callback
+            'social-link-admin', // Page
+            'setting_section_id' // Section
+        );
 
         add_settings_field(
             'linkedin', // ID
@@ -175,76 +175,68 @@ class Social_link_Admin
         );
 
         add_settings_field(
-                    'youtube', // ID
-                    'Youtube', // Title
-                    [$this, 'youtube_callback'], // Callback
-                    'social-link-admin', // Page
-                    'setting_section_id' // Section
-            );
+            'youtube', // ID
+            'Youtube', // Title
+            [$this, 'youtube_callback'], // Callback
+            'social-link-admin', // Page
+            'setting_section_id' // Section
+        );
 
         add_settings_field(
-                    'twitter', // ID
-                    'Twitter', // Title
-                    [$this, 'twitter_callback'], // Callback
-                    'social-link-admin', // Page
-                    'setting_section_id' // Section
-            );
+            'twitter', // ID
+            'X / ex: Twitter', // Title
+            [$this, 'twitter_callback'], // Callback
+            'social-link-admin', // Page
+            'setting_section_id' // Section
+        );
 
         add_settings_field(
-                    'instagram', // ID
-                    'Instagram', // Title
-                    [$this, 'instagram_callback'], // Callback
-                    'social-link-admin', // Page
-                    'setting_section_id' // Section
-            );
+            'instagram', // ID
+            'Instagram', // Title
+            [$this, 'instagram_callback'], // Callback
+            'social-link-admin', // Page
+            'setting_section_id' // Section
+        );
 
         add_settings_field(
-                    'tumblr', // ID
-                    'Tumblr', // Title
-                    [$this, 'tumblr_callback'], // Callback
-                    'social-link-admin', // Page
-                    'setting_section_id' // Section
-            );
+            'tumblr', // ID
+            'Tumblr', // Title
+            [$this, 'tumblr_callback'], // Callback
+            'social-link-admin', // Page
+            'setting_section_id' // Section
+        );
 
         add_settings_field(
-                    'googleplus', // ID
-                    'Google +', // Title
-                    [$this, 'googleplus_callback'], // Callback
-                    'social-link-admin', // Page
-                    'setting_section_id' // Section
-            );
+            'skype', // ID
+            'Skype', // Title
+            [$this, 'skype_callback'], // Callback
+            'social-link-admin', // Page
+            'setting_section_id' // Section
+        );
 
         add_settings_field(
-                    'skype', // ID
-                    'Skype', // Title
-                    [$this, 'skype_callback'], // Callback
-                    'social-link-admin', // Page
-                    'setting_section_id' // Section
-            );
+            'reddit', // ID
+            'Reddit', // Title
+            [$this, 'reddit_callback'], // Callback
+            'social-link-admin', // Page
+            'setting_section_id' // Section
+        );
 
         add_settings_field(
-                    'reddit', // ID
-                    'Reddit', // Title
-                    [$this, 'reddit_callback'], // Callback
-                    'social-link-admin', // Page
-                    'setting_section_id' // Section
-            );
+            'soundcloud', // ID
+            'Soundcloud', // Title
+            [$this, 'soundcloud_callback'], // Callback
+            'social-link-admin', // Page
+            'setting_section_id' // Section
+        );
 
         add_settings_field(
-                    'soundcloud', // ID
-                    'Soundcloud', // Title
-                    [$this, 'soundcloud_callback'], // Callback
-                    'social-link-admin', // Page
-                    'setting_section_id' // Section
-            );
-
-        add_settings_field(
-                    'pinterest', // ID
-                    'Pinterest', // Title
-                    [$this, 'pinterest_callback'], // Callback
-                    'social-link-admin', // Page
-                    'setting_section_id' // Section
-            );
+            'pinterest', // ID
+            'Pinterest', // Title
+            [$this, 'pinterest_callback'], // Callback
+            'social-link-admin', // Page
+            'setting_section_id' // Section
+        );
 
         /*
         facebook twitter
@@ -312,7 +304,7 @@ class Social_link_Admin
      */
     public function print_section_info()
     {
-        echo 'Enter your settings below:';
+        echo __('Enter your socials links below:');
     }
 
     /**
@@ -321,9 +313,9 @@ class Social_link_Admin
     public function facebook_callback()
     {
         printf(
-                    '<input type="url" id="facebook" name="links[facebook]" value="%s" />',
-                    isset($this->options['facebook']) ? esc_url($this->options['facebook']) : ''
-            );
+            '<input type="url" id="facebook" name="links[facebook]" value="%s" />',
+            isset($this->options['facebook']) ? esc_url($this->options['facebook']) : ''
+        );
     }
 
     /**
@@ -332,9 +324,9 @@ class Social_link_Admin
     public function linkedin_callback()
     {
         printf(
-                    '<input type="url" id="linkedin" name="links[linkedin]" value="%s" />',
-                    isset($this->options['linkedin']) ? esc_url($this->options['linkedin']) : ''
-            );
+            '<input type="url" id="linkedin" name="links[linkedin]" value="%s" />',
+            isset($this->options['linkedin']) ? esc_url($this->options['linkedin']) : ''
+        );
     }
 
     /**
@@ -343,9 +335,9 @@ class Social_link_Admin
     public function youtube_callback()
     {
         printf(
-                    '<input type="url" id="youtube" name="links[youtube]" value="%s" />',
-                    isset($this->options['youtube']) ? esc_url($this->options['youtube']) : ''
-            );
+            '<input type="url" id="youtube" name="links[youtube]" value="%s" />',
+            isset($this->options['youtube']) ? esc_url($this->options['youtube']) : ''
+        );
     }
 
     /**
@@ -354,9 +346,9 @@ class Social_link_Admin
     public function twitter_callback()
     {
         printf(
-                    '<input type="url" id="twitter" name="links[twitter]" value="%s" />',
-                    isset($this->options['twitter']) ? esc_url($this->options['twitter']) : ''
-            );
+            '<input type="url" id="twitter" name="links[twitter]" value="%s" />',
+            isset($this->options['twitter']) ? esc_url($this->options['twitter']) : ''
+        );
     }
 
     /**
@@ -365,9 +357,9 @@ class Social_link_Admin
     public function instagram_callback()
     {
         printf(
-                    '<input type="url" id="instagram" name="links[instagram]" value="%s" />',
-                    isset($this->options['instagram']) ? esc_url($this->options['instagram']) : ''
-            );
+            '<input type="url" id="instagram" name="links[instagram]" value="%s" />',
+            isset($this->options['instagram']) ? esc_url($this->options['instagram']) : ''
+        );
     }
 
     /**
@@ -376,20 +368,9 @@ class Social_link_Admin
     public function tumblr_callback()
     {
         printf(
-                    '<input type="url" id="tumblr" name="links[tumblr]" value="%s" />',
-                    isset($this->options['tumblr']) ? esc_url($this->options['tumblr']) : ''
-            );
-    }
-
-    /**
-     * Get the settings option array and print one of its values.
-     */
-    public function googleplus_callback()
-    {
-        printf(
-                    '<input type="url" id="googleplus" name="links[googleplus]" value="%s" />',
-                    isset($this->options['googleplus']) ? esc_url($this->options['googleplus']) : ''
-            );
+            '<input type="url" id="tumblr" name="links[tumblr]" value="%s" />',
+            isset($this->options['tumblr']) ? esc_url($this->options['tumblr']) : ''
+        );
     }
 
     /**
@@ -398,9 +379,9 @@ class Social_link_Admin
     public function skype_callback()
     {
         printf(
-                    '<input type="url" id="skype" name="links[skype]" value="%s" />',
-                    isset($this->options['skype']) ? esc_url($this->options['skype']) : ''
-            );
+            '<input type="url" id="skype" name="links[skype]" value="%s" />',
+            isset($this->options['skype']) ? esc_url($this->options['skype']) : ''
+        );
     }
 
     /**
@@ -409,9 +390,9 @@ class Social_link_Admin
     public function reddit_callback()
     {
         printf(
-                    '<input type="url" id="reddit" name="links[reddit]" value="%s" />',
-                    isset($this->options['reddit']) ? esc_url($this->options['reddit']) : ''
-            );
+            '<input type="url" id="reddit" name="links[reddit]" value="%s" />',
+            isset($this->options['reddit']) ? esc_url($this->options['reddit']) : ''
+        );
     }
 
     /**
@@ -420,9 +401,9 @@ class Social_link_Admin
     public function soundcloud_callback()
     {
         printf(
-                    '<input type="url" id="soundcloud" name="links[soundcloud]" value="%s" />',
-                    isset($this->options['soundcloud']) ? esc_url($this->options['soundcloud']) : ''
-            );
+            '<input type="url" id="soundcloud" name="links[soundcloud]" value="%s" />',
+            isset($this->options['soundcloud']) ? esc_url($this->options['soundcloud']) : ''
+        );
     }
 
     /**
@@ -431,8 +412,8 @@ class Social_link_Admin
     public function pinterest_callback()
     {
         printf(
-                    '<input type="url" id="pinterest" name="links[pinterest]" value="%s" />',
-                    isset($this->options['pinterest']) ? esc_url($this->options['pinterest']) : ''
-            );
+            '<input type="url" id="pinterest" name="links[pinterest]" value="%s" />',
+            isset($this->options['pinterest']) ? esc_url($this->options['pinterest']) : ''
+        );
     }
 }
